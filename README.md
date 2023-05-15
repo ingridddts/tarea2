@@ -4,6 +4,7 @@
 ----- Tarea en desarrollo----- 
  
 Integrantes:
-
+- José Alarcón Recabal
+- Ingrid Triviño Silva
 
 Enunciado:
