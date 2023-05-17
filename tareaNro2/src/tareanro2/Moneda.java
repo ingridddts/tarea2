@@ -1,19 +1,24 @@
 package tareanro2;
-
-//clase abstracta que hereda 4 subclases: Moneda100, Moneda500, Moneda1000, Moneda1500
+/**
+ * clase abstracta que contiene/hereda 4 subclases: Moneda100, Moneda500, Moneda1000, Moneda1500
+ * @param serie : indica el número de serie de la moneda
+ */
 
 import java.awt.Graphics;
 
 abstract class Moneda{
     protected int serie, x, y;
     
+    //constructor
     public Moneda(int serie, int x, int y){
         this.serie = serie;
         this.x = x;
         this.y = y;      
     }
     
-    //devuelve el numero de serie de la moneda
+    /**
+     * @return devuelve el número de serie de la moneda
+     */
     public int getSerie (){
         return serie;
     }

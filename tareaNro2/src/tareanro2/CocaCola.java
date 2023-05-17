@@ -1,6 +1,7 @@
 package tareanro2;
-
-//Clase CocaCola que hereda de clase abstracta bebida
+/**
+ * Esta clase hereda de clase abstracta bebida y devuelve el sabor de la bebida
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,14 +11,21 @@ class CocaCola extends Bebida{
     public CocaCola(int i, int x, int y){
         super(i, x, y);
     }
-    //devuelve el sabor de la bebida, en ese caso coca cola
+    
+    /**
+     * @param s, contiene el sabor de la bebida
+     * @return devuelve el sabor de la bebida, en este caso, coca cola
+    */
     public String sabor(){
         String s = "cocacola";
         return s;
     }
     
+    /**
+     * se representa, de forma gráfica, una cocacola
+    */
     @Override
-    public void paint(Graphics g){
+    public void paint(Graphics g){ 
         g.setColor(Color.red);
         g.fillRect(x+4, y+4, 142, 25);
         g.setColor(Color.white);

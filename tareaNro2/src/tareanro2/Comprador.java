@@ -1,4 +1,9 @@
 package tareanro2;
+/**
+ * clase define atributos del comprador de la máquina expendedora
+ * @param sabor del producto comprado
+ * @param monedavuelto, vuelto que se debe entregar
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -23,9 +28,13 @@ class Comprador{
     public ArrayList<Moneda> monedero;
     private ArrayList<Bebida> beb;
     
-    //el constructor recibe como parametros con qué moneda se compra
-    //el tipo de producto comprado: dulce o bebida
-    //qué producto se compró: cocacola, sprite, snickers o super8
+    /**
+     * constructor
+     * @param exp se pasa como parametro datos del expendedor
+     * @param monedero: arreglo que contiene las monedas ingresadas a la máquina expendedora
+     * @param x, y : datos de la posición de la parte gráfica
+     */
+
     public Comprador(Expendedor exp, int x, int y){        
         moneda = null;
         this.x = x;
@@ -40,20 +49,26 @@ class Comprador{
         Producto varProducto;
     }
     
-    //devuelve cuánto es el vuelto del comprador
+    /**
+     * @return devuelve cuanto es el vuelto que se debe entregar al comprador
+     */
     public int cuantoVuelto(){
         return monedavuelto;
     }
-    
-    //devuelve cuál bebida o dulce compró
+    /**
+     * @return devuelve qué producto compró
+    */
     public String queCompraste() {
         return sabor;
     }
     
-     public void addMoneda100(){
+    /**
+     * agrega las monedas a la gráfica de la máquina expendedora (para addMoneda100, addMoneda500, addMoneda1000)
+    */
+    public void addMoneda100(){
         Moneda m=new Moneda100(serieMoneda++,0,0);
         m.setXY(x+Mon100+30,y+233);
-        System.out.println("Serie: "+m.getSerie());
+        System.out.println("Serie: "+ m.getSerie());
         monedero.add(m);
         Mon100-=2;
         dinero += m.getValor();
@@ -62,11 +77,12 @@ class Comprador{
       public void addMoneda500(){
         Moneda m=new Moneda500(serieMoneda++,0,0);
         m.setXY(x+Mon500+35*4, y+233);
-        System.out.println("Serie: "+m.getSerie());
+        System.out.println("Serie: "+ m.getSerie());
         monedero.add(m);
         Mon500-=2;
         dinero+=m.getValor();
     }
+      
     public void addMoneda1000(){
         Moneda m=new Moneda1000(serieMoneda++,0,0);
         m.setXY(x+Mon1000+(30*4)*2+30, y+233);
@@ -75,13 +91,14 @@ class Comprador{
         Mon1000-=2;
         dinero+=m.getValor();
     }
-     
-      public void resetMonedas(){
+    
+    public void resetMonedas(){
         Mon100=0;
         Mon500=0;
         Mon1000=0;
         int vuelto=0;
     }
+    
     
     public void cualProducto(int tipo, int cual) throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException{
         resetMonedas();
@@ -94,12 +111,15 @@ class Comprador{
         Bebida b=exp.getDepUnico();
         if(b!=null){
            auxB+=30;
-           System.out.println("Bebida: "+b.sabor()+ "Serie: "+b.getSerie());
+           System.out.println("Bebida: " + b.sabor() + "Serie: " + b.getSerie());
            b.setXY(x+10, y+370+auxB);
            beb.add(b);
         }
     }
     
+    /**
+     * @return devuelve el vuelto
+     */
     public Moneda getVuelto(){
         Moneda m=exp.getVuelto();
         if(m!=null){
@@ -108,8 +128,10 @@ class Comprador{
             m.setXY(x+10+vuelto, y+317);
             vuelto += 2;
             monedero.add(m);
-        }return m;
+        }
+        return m;
     }
+    
     
     public void paint(Graphics g){
         g.setColor(Color.white);

@@ -6,14 +6,18 @@ import java.awt.Graphics;
 public class DepositoUnico {
    Bebida be;
    private int x,y;
+   
    public DepositoUnico(int x, int y){
-       this.x=x; this.y=y;
+       this.x = x; 
+       this.y = y;
    } 
+   
    public void addBebida(Bebida b){
-       be=b;
+       be = b;
    }
+   
    public Bebida getBebida(){
-       Bebida b=be;
+       Bebida b = be;
        be=null;
        return b;
    }

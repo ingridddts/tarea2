@@ -1,4 +1,7 @@
 package tareanro2;
+/**
+ * clase que contiene las monedas monedas almacenadas y el vuelto
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -21,7 +24,10 @@ class DepositoVuelto{
         aux -= 3;
     }
     
-    //determinar el vuelto
+    /**
+     * se determina el vuelto a entregar
+     * @return devuelve el vuelto que se debe entragar
+     */
     public Moneda getMoneda(){
         if(deposito.isEmpty()){ 
             return null; //si no se inserta una moneda devuelve null

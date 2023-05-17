@@ -1,5 +1,7 @@
 package tareanro2;
-
+/**
+ * Esta clase Fanta hereda de clase abstracta bebida y devuelve el sabor de la bebida
+ */
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -10,10 +12,17 @@ class Fanta extends Bebida{
     }
     
     @Override
+    /**
+     * @param s, contiene el sabor de la bebida
+     * @return devuelve el sabor de la bebida, en este caso, fanta
+    */
     public String sabor(){
         return "Fanta";
     }
     @Override
+    /**
+     * se representa, de forma gráfica, una fanta
+    */
     public void paint (Graphics g){
         Color o=new Color(255,153,0);
         g.setColor(o);

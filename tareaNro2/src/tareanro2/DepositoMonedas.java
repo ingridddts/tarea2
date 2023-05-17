@@ -1,4 +1,8 @@
 package tareanro2;
+/**
+ * esta clase contiene las monedas almacenadas en la máquina expendedora
+ * @param dm : arreglo que contiene todas las monedas almacenadas
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,7 +14,7 @@ public class DepositoMonedas {
     
     public DepositoMonedas(int x,int y){
         this.x=x;this.y=y;
-        dm=new ArrayList<Moneda>();
+        dm = new ArrayList<Moneda>();
     }
     
     public void addMoneda(Moneda moneda){

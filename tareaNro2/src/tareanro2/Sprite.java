@@ -1,6 +1,7 @@
 package tareanro2;
-
-//Clase que hereda de clase abstracta bebida
+/**
+ * Esta clase Sprite hereda de clase abstracta bebida y devuelve el sabor de la bebida
+ */
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -9,13 +10,19 @@ class Sprite extends Bebida{
         super(serie, x, y);
 }
     @Override
-    //devuelve el nombre de su sabor
+    /**
+     * @param s, contiene el sabor de la bebida
+     * @return devuelve el sabor de la bebida, en este caso, sprite
+    */
     public String sabor(){
         String s= "sprite";
         return s;
     }  
     
     @Override
+    /**
+     * se representa, de forma gráfica, una sprite
+    */
     public void paint (Graphics g){
         g.setColor(Color.GREEN);
         g.fillRect(x+4, y+4, 142, 25);

@@ -1,4 +1,9 @@
 package tareanro2;
+/**
+ * Esta clase contiene la existencia de cada uno de los productos vendidos por la máquina expendedora.
+ * @param deposito contiene un arreglo del tipo bebida
+ * @param deposito1 contiene un arreglo del tipo dulces
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -9,7 +14,9 @@ class Deposito{
     private ArrayList<Dulce> deposito1;
     private int x, y , aux;
     
-    //constructor para crear el deposito y los arraylist de cada tipo
+    /**
+     * constructor para crear el deposito y los arraylist de cada tipo
+     */
     public Deposito(int x, int y){
         deposito = new ArrayList<Bebida>();
         deposito1 = new ArrayList<Dulce>();
@@ -29,7 +36,10 @@ class Deposito{
         deposito1.add(dulce);
     }
     
-    //se verifica si hay bebidas
+    /**
+     * se verifica si hay bebidas
+     * @return devuelve la bebida seleccionada
+     */
     public Bebida getBebida(){
         if(deposito.isEmpty()){
             System.out.println("Deposito Vacio");
@@ -42,8 +52,11 @@ class Deposito{
             return bebida;
         }
     }
-    
-    //se verifica si hay dulces
+
+    /**
+     * se verifica si hay dulces
+     * @return devuelve el dulce seleccionado
+     */
     public Dulce getDulce(){
         if(deposito1.size() == 0){
              return null; //si el deposito de dulces esta vacio

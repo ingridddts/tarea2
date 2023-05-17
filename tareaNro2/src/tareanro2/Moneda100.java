@@ -1,6 +1,9 @@
 package tareanro2;
 
-//clase que hereda de clase abstracta Moneda
+/**
+ * clase que hereda de clase abstracta Moneda
+ * @param color: color que recibe en la grafica de la maquina expendedora
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -8,11 +11,14 @@ import java.awt.Graphics;
 class Moneda100 extends Moneda{
     private Color brown = new Color(153, 102, 0);
     
+    //constructor
     public Moneda100(int serie, int x, int y){
         super(serie, x, y);
     }
-    
-    //devuelve su valor
+
+    /**
+     * @return devuelve cual es el valor de la moneda
+     */
     public int getValor(){
         return 100;
     }
